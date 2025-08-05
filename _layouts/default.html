@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="{{- page.lang | default: site.lang -}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{%- if page.title and page.title != "" -%}{{ page.title }} ~ {% endif %}{{ site.title }}</title>
+
+    {% seo %}
+    {% feed_meta %}
+    {% json_feed_meta %}
+  </head>
+  <body>
+    {% include header.html %}
+
+    {% include footer.html %}
+  </body>
+</html>
