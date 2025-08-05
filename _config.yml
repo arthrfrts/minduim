@@ -1,0 +1,14 @@
+title: Minduim
+description: >-
+  This is a theme for a Jekyll blog.
+
+lang: pt-BR
+timezone: America/Sao_Paulo
+
+plugins:
+  - jekyll-archives
+  - jekyll-feed
+  - jekyll-json-feed
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-sitemap
