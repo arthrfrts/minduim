@@ -1,0 +1,31 @@
+{%- capture site_branding -%}
+  <a class="site-branding" href="{{ '/' | absolute_url }}">
+    {%- if site.logo -%}
+      <img src="{{ site.logo | absolute_url }}" alt="{{ site.title }}" role="presentation" />
+    {%- endif -%}
+
+    {{ site.title -}}
+  </a>
+{%- endcapture -%}
+
+<header class="site-header">
+  {% if page.title and page.title != "" %}
+    <span class="site-title">
+      {{ site_branding }}
+    </span>
+  {% else %}
+    <h1 class="site-title">
+      {{ site_branding }}
+    </h1>
+  {% endif %}
+
+  {% if site.main_menu %}
+    <nav class="main-menu">
+      {% for item in site.main_menu %}
+        <a class="menu-item" href="{{ item.url }}" {% if item.external %}target="_blank"{% endif %}>
+          {{ item.label }}
+        </a>
+      {% endfor %}
+    </nav>
+  {% endif %}
+</header>
