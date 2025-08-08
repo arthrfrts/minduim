@@ -2,8 +2,12 @@ title: Minduim
 description: >-
   This is a theme for a Jekyll blog.
 
+logo: https://picsum.photos/300/300
 lang: pt-BR
 timezone: America/Sao_Paulo
+
+permalink: /:year/:month/:title.html
+slug_mode: latin
 
 plugins:
   - jekyll-archives
@@ -12,3 +16,66 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
   - jekyll-sitemap
+
+# Theme Options
+minduim:
+  date_formats:
+    day: "%v"
+    month: "%B, %Y"
+    year: "%Y"
+  translations:
+    jump_to_navigation: "Go to navigation"
+    jump_to_content: "Go to content"
+    archive_date_title: "Posts from %s" # don't forget `%s`, it will be replaced by the date
+    archive_tag_title: "Posts with the tag “%s”" # don't forget `%s`, it will be replaced by the tag name.
+    archive_category_title: "Posts filed under “%s”" # don't forget `%s`, it will be replaced by the category name.
+    post_tagged_with: "Tagged with:"
+    blog_pagination_title: "Blog Pagination"
+    blog_pagination_next_page: "Older posts"
+    blog_pagination_prev_page: "Newer posts"
+
+# Menus
+main_menu:
+  title: Navigate
+  items:
+    - label: About
+      url: /about/
+    - label: Contact
+      url: /contact/
+
+footer_menu:
+  title: Social
+  items:
+    - label: Feed
+      url: /feed/
+    - label: Bluesky
+      url: https://bsky.app/
+      external: true
+    - label: GitHub
+      url: https://github.com/
+      external: true
+
+# Plugin settings
+plugins:
+  - jekyll-feed
+  - jekyll-json-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-archives
+
+# Plugin: jekyll-paginate
+paginate: 12
+paginate_path: "/page/:num/"
+
+# Plugin: jekyll-archives
+jekyll-archives:
+  enabled:
+  - year
+  - month
+  - tags
+  layout: archive
+  permalinks:
+    year: "/:year/"
+    month: "/:year/:month/"
+    tag: "/tags/:name.html"

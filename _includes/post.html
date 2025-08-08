@@ -1,0 +1,25 @@
+<article class="post">
+  {% if include.post.title and include.post.title != "" %}
+    <h2 class="post-title">
+      <a href="{{ include.post.url | relative_url }}">
+        {{ include.post.title }}
+      </a>
+    </h2>
+  {% endif %}
+
+  <div class="post-content">
+    {% if include.show_excerpts %}
+      {{ include.post.excerpt }}
+    {% else %}
+      {{ include.post.content }}
+    {% endif %}
+  </div>
+
+  <footer class="post-footer">
+    <a class="post-meta _permalink" href="{{ include.post.url | absolute_url }}" rel="bookmark">
+      <time class="_date" datetime="{{ include.post.date | date_to_xmlschema }}">
+        {{- include.post.date | date: site.minduim.date_formats.day -}}
+      </time>
+    </a>
+  </footer>
+</article>

@@ -56,9 +56,95 @@ body {
   color: var(--color-foreground);
 }
 
+::selection {
+  background: var(--color-accent-alt);
+  color: var(--color-background);
+}
+
 /*
   Text Elements
 */
+
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure {
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1.25rem;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+mark,
+ins {
+  background-color: var(--color-accent);
+  text-decoration: none;
+}
+
+del,
+strike {
+  text-decoration: line-through;
+  text-decoration-style: wavy;
+}
+
+abbr,
+acronym {
+  text-decoration-style: dotted;
+  cursor: help;
+}
+
+sub,
+sup {
+  font-size: 0.65em;
+  line-height: 100%;
+}
+
+/* Headings */
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.75em;
+}
 
 /* Links */
 a {
@@ -77,4 +163,113 @@ a:focus {
 a:active {
   color: var(--color-accent-alt);
   text-decoration-color: currentcolor;
+}
+
+/* Lists */
+
+ul {
+  list-style: square;
+}
+
+ul ul {
+  list-style: circle;
+}
+
+ul ul ul {
+  list-style: disc;
+}
+
+ol ol {
+  list-style: lower-alpha;
+}
+
+ol ol ol {
+  list-style: lower-roman;
+}
+
+li ul,
+li ol {
+  margin-bottom: 0;
+}
+
+li {
+  margin-block: 0.5rem;
+  margin-left: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+dl dt {
+  font-weight: 700;
+}
+
+dl dd + dt,
+dl dd + dd {
+  margin-top: 0.5rem;
+}
+
+/* Blockquote */
+q {
+  quotes: "“" "”" "‘" "’";
+  font-style: normal;
+}
+
+blockquote {
+  font-family: var(--font-family-quote);
+  font-style: italic;
+  line-height: 1.65;
+  border-left: 0.5rem solid var(--color-accent);
+  padding-left: 1rem;
+}
+
+blockquote cite {
+  font-family: var(--font-family-base);
+  font-style: normal;
+  font-size: var(--font-size-small);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  transition: color var(--transition-duration);
+}
+
+table th {
+  text-align: left;
+  background: var(--color-accent);
+}
+
+table th,
+table td {
+  padding: 0.5rem;
+  border-bottom: var(--border);
+}
+
+/* Code and pre-formatted text */
+pre,
+code,
+var,
+kbd,
+tt {
+  font-family: var(--font-family-code);
+  font-size: var(--font-size-small);
+}
+
+pre {
+  max-width: 100%;
+  overflow: auto;
+}
+
+.highlight .gutter {
+  width: 3ch;
+}
+
+/*
+  Horizontal Rule
+*/
+hr {
+  margin-block: 1.5rem;
+  height: 0;
+  border-bottom: var(--border);
 }

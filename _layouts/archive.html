@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<div class="blog">
+  <h1 class="archive-title">
+    {%- if page.date -%}
+      {%- assign archive_date = page.date | date: site.minduim.date_formats[page.type] -%}
+      {{ site.minduim.translations.archive_date_title | replace: "%s", archive_date }}
+    {% else %}
+      {%- if page.type == "tag" -%}
+        {{ site.minduim.translations.archive_tag_title | replace: "%s", page.title }}
+      {%- else -%}
+        {{ site.minduim.translations.archive_category_title | replace: "%s", page.title }}
+      {%- endif -%}
+    {% endif %}
+  </h1>
+
+  {%- for post in page.posts -%}
+    {% include post.html post=post show_excerpts=true %}
+  {%- endfor -%}
+
+  {% if paginator.previous_page or paginator.next_page -%}
+    <nav class="blog-pagination" aria-label="{{ site.minduim.translations.blog_pagination_title }}">
+      <div class="pagination-links">
+        {% if paginator.previous_page -%}
+          <a class="prev-page menu-item" href="{{ paginator.previous_page_path | relative_url }}" rel="prev">
+            {{- site.minduim.translations.blog_pagination_prev_page -}}
+          </a>
+        {%- endif %}
+
+        {% if paginator.next_page -%}
+          <a class="next-page menu-item" href="{{ paginator.next_page_path | relative_url }}" rel="next">
+            {{- site.minduim.translations.blog_pagination_next_page -}}
+          </a>
+        {%- endif %}
+      </div>
+    </nav>
+  {%- endif %}
+</div>
+
+{% include sidebar.html %}
