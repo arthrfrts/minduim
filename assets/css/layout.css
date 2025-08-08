@@ -104,17 +104,17 @@ body {
   color: var(--color-details);
 }
 
-a.post-meta {
-  text-decoration: none;
+.post-footer a {
+  text-decoration-color: transparent;
 }
 
-a.post-meta:hover,
-a.post-meta:focus {
+.post-footer a:hover,
+.post-footer a:focus {
   color: var(--color-foreground);
-  text-decoration-style: wavy;
+  text-decoration-color: var(--color-accent);
 }
 
-a.post-meta:active {
+.post-footer a:active {
   color: var(--color-accent-alt);
 }
 
