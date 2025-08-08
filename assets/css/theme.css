@@ -1,0 +1,33 @@
+:root {
+  /*
+    Typography
+  */
+  --font-family-base: ui-sans-serif, sans-serif;
+  --font-family-headings: var(--font-family-base);
+  --font-family-code: ui-monospace;
+  --font-size-base: 16px;
+  --font-size-small: 0.75em;
+  /*
+    Colors
+  */
+  --color-background: var(--white);
+  --color-foreground: var(--black);
+  --color-accent: var(--yellow);
+  --color-accent-alt: var(--red);
+  --color-details: var(--gray);
+  /*
+    Details
+  */
+  --radius: 1em;
+  --border: 1px dotted var(--color-details);
+  --shadow: 0 0 7px var(--color-details);
+  --transition-duration: 0.36s;
+  /*
+    Color palette
+  */
+  --white: rgb(255, 255, 255);
+  --black: rgb(44, 44, 44);
+  --gray: rgb(133, 146, 158);
+  --red: rgb(231, 76, 60);
+  --yellow: #f1c40f;
+}

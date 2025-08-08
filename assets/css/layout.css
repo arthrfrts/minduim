@@ -1,0 +1,92 @@
+html {
+  border-top: 0.5rem solid var(--color-accent);
+}
+
+body {
+  margin-block: 1rem;
+  margin-inline: 1.5rem;
+}
+
+/*
+  Site Header
+*/
+
+.site-header {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+@media screen and (width > 960px) {
+  .site-header {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+}
+
+/* Branding */
+.site-branding {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-logo {
+  display: block;
+  border-radius: 100%;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.site-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* Main Menu */
+.main-menu {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.main-menu .menu-item {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+/*
+  Site Footer
+*/
+
+.site-footer {
+  margin-top: 2rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-details);
+  font-size: var(--font-size-small);
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  color: var(--color-foreground);
+}
+
+.site-footer a:active {
+  color: var(--color-accent-alt);
+}
+
+.site-footer .footer-menu {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}

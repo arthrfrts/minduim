@@ -1,16 +1,16 @@
 <footer class="site-footer">
-  <p>
-    <strong><a href="{{ '/' | absolute_url }}">{{ site.title }}</a></strong>
-    &mdash; {{ site.description }}
-  </p>
-
   {% if site.footer_menu %}
     <nav class="footer-menu">
       {% for item in site.footer_menu %}
         <a class="menu-item" href="{{ item.url }}" {% if item.external %}target="_blank"{% endif %}>
-          {{ item.label }}
+          {{- item.label -}}
         </a>
       {% endfor %}
     </nav>
   {% endif %}
+
+  <p>
+    <strong><a href="{{ '/' | absolute_url }}">{{ site.title }}</a></strong>
+    &mdash; {{ site.description }}
+  </p>
 </footer>

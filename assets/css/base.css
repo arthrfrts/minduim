@@ -1,0 +1,80 @@
+/*
+  Resets
+*/
+
+html {
+  box-sizing: border-box;
+  font-size: var(--font-size-base);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+table,
+iframe,
+audio,
+video,
+figure,
+input,
+button,
+textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  Basic styling
+*/
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+}
+
+/*
+  Text Elements
+*/
+
+/* Links */
+a {
+  color: currentcolor;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  transition-property: color, text-decoration-color;
+  transition-duration: var(--transition-duration);
+}
+
+a:hover,
+a:focus {
+  text-decoration-color: var(--color-accent);
+}
+
+a:active {
+  color: var(--color-accent-alt);
+  text-decoration-color: currentcolor;
+}
