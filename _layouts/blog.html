@@ -15,21 +15,21 @@ layout: default
 
   {% if paginator.previous_page or paginator.next_page -%}
     <nav class="blog-pagination" aria-label="{{ site.minduim.translations.blog_pagination_title }}">
-      <div class="pagination-links">
-        {% if paginator.previous_page -%}
-          <a class="prev-page menu-item" href="{{ paginator.previous_page_path | relative_url }}" rel="prev">
-            {{- site.minduim.translations.blog_pagination_prev_page -}}
-          </a>
-        {%- endif %}
+      {% if paginator.previous_page -%}
+        <a class="prev-page menu-item" href="{{ paginator.previous_page_path | relative_url }}" rel="prev">
+          {{- site.minduim.translations.blog_pagination_prev_page -}}
+        </a>
+      {%- endif %}
 
-        {% if paginator.next_page -%}
-          <a class="next-page menu-item" href="{{ paginator.next_page_path | relative_url }}" rel="next">
-            {{- site.minduim.translations.blog_pagination_next_page -}}
-          </a>
-        {%- endif %}
-      </div>
+      {% if paginator.next_page -%}
+        <a class="next-page menu-item" href="{{ paginator.next_page_path | relative_url }}" rel="next">
+          {{- site.minduim.translations.blog_pagination_next_page -}}
+        </a>
+      {%- endif %}
     </nav>
   {%- endif %}
 </div>
 
-{% include sidebar.html %}
+<div class="sidebar">
+  {%- include sidebar.html -%}
+</div>

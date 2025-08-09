@@ -1,9 +1,31 @@
-<aside class="sidebar">
-  <section class="widget">
-    <h2 class="widget-title">Widget Title</h2>
+{% comment %}
+  Sidebar
 
-    <div class="widget-content">
-      <p>Lorem ipsum dolor sit amet.</p>
-    </div>
-  </section>
-</aside>
+  You can add custom widgets to the sidebar of your site by sending
+  both title and contents of your widget through an include. For example:
+
+  {% capture widget_content %}
+    <p>This will appear in my sidebar!</p>
+  {% endcapture %}
+
+  {% assign widget_title = "This is an example" %}
+
+  {% include blog/widget.html title=widget_title content=widget_content %}
+{% endcomment %}
+
+{% assign blogroll_title = "Useful links" %}
+
+{% capture blogroll_content %}
+  <dl>
+    <dt>
+      <a href="https://arthr.me/" target="_blank">Arthur Freitas</a>
+    </dt>
+    <dd>The author of this theme.</dd>
+    <dt>
+      <a href="https://github.com/arthrfrts/minduim" target="_blank">GitHub Repo</a>
+    </dt>
+    <dd>Report issues, read the documentation and help with development!</dd>
+  </dl>
+{% endcapture %}
+
+{%- include widget.html title=blogroll_title content=blogroll_content -%}

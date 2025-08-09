@@ -1,0 +1,62 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      {{ page.title }}
+    </h1>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  <footer class="post-footer">
+    <a class="post-meta _permalink" href="{{ page.url | absolute_url }}" rel="bookmark">
+      <time class="_date" datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: site.minduim.date_formats.day }}
+      </time>
+    </a>
+
+    {% if page.tags.size > 0 %}
+      <div class="post-meta _tags">
+        <p class="tags-label">
+          {{ site.minduim.translations.post_tagged_with }}
+        </p>
+
+        <ul class="tags-list">
+          {% for tag in page.tags -%}
+            {%- assign tag_name = tag | slugify: site.slug_mode -%}
+            {%- assign tag_url = site.jekyll-archives.permalinks.tag | replace: ":name", tag_name | relative_url -%}
+            <li class="tag-item">
+              <a href="{{- tag_url -}}" rel="tag">
+                {{ tag }}
+              </a>
+            </li>
+          {%- endfor %}
+        </ul>
+      </div>
+    {% endif %}
+  </footer>
+
+  {% if page.previous or page.next -%}
+    <nav class="blog-pagination" aria-label="{{ site.minduim.translations.blog_pagination_title }}">
+      {% if page.next -%}
+        <a class="prev-page menu-item" href="{{ page.next.url | relative_url }}" rel="next">
+          &larr; {{ page.next.title }}
+        </a>
+      {%- endif %}
+
+      {% if page.previous -%}
+        <a class="next-page menu-item" href="{{ page.previous.url | relative_url }}" rel="prev">
+          {{ page.previous.title }} &rarr;
+        </a>
+      {%- endif %}
+    </nav>
+  {%- endif %}
+</article>
+
+<div class="sidebar">
+  {%- include sidebar.html -%}
+</div>
