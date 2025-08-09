@@ -107,7 +107,11 @@ pre,
 ul,
 ol,
 dl,
-figure {
+figure,
+table,
+iframe,
+audio,
+video {
   line-height: 1.5;
   margin-bottom: 1rem;
 }
@@ -207,6 +211,10 @@ ul {
   list-style: square;
 }
 
+li::marker {
+  color: var(--color-accent-alt);
+}
+
 ul ul {
   list-style: circle;
 }
@@ -241,6 +249,19 @@ dl dt {
 dl dd + dt,
 dl dd + dd {
   margin-top: 0.5rem;
+}
+
+.task-list {
+  list-style: none;
+}
+
+.task-list-item {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 0;
+  padding-left: 0;
 }
 
 /* Blockquote */
@@ -317,7 +338,7 @@ hr {
 /*
   Media
 */
-/* Media */
+/* Images */
 img {
   max-width: 100%;
   overflow: hidden;
@@ -348,7 +369,8 @@ img {
 }
 
 img + em,
-img + br + em {
+img + br + em,
+figcaption {
   display: block;
   width: 10rem;
   color: var(--color-details);
@@ -359,7 +381,8 @@ img + br + em {
 
 @media screen and (width > 690px) {
   img + em,
-  img + br + em {
+  img + br + em,
+  figcaption {
     position: absolute;
     top: 0;
     right: 0;
@@ -376,4 +399,31 @@ iframe[src*="vimeo"] {
   aspect-ratio: 16 / 9;
   height: auto;
   width: 100%;
+}
+
+audio {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/*
+  Footnotes
+*/
+.footnotes {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: var(--border);
+  font-size: var(--font-size-small);
+}
+
+/*
+  TODO: Forms
+*/
+
+input[type="checkbox"] {
+  appearance: checkbox;
+  width: 1em;
+  height: 1em;
+  accent-color: var(--color-accent-alt);
 }
