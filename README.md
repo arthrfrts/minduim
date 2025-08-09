@@ -2,7 +2,7 @@
 
 A charming Jekyll blog theme inspired by the classic Posterous default theme. Named after the Brazilian translation of the _Peanuts_ comic strip, Minduim offers a clean two-column layout with subtle homages to Charlie Brown.
 
-![Minduim Theme Preview](assets/preview.png)
+![Minduim Theme Preview](preview.png)
 
 ## Features
 
