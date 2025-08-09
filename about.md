@@ -135,7 +135,7 @@ Please refer to the full [`_config.yml`](https://github.com/arthrfrts/minduim/bl
 
 You can add a `theme.css` in your `/assets/css` directory to customize the style options of your site.
 
-Just copy our [`theme.css`](https://github.com/arthrfrts/minduim/blob/main/assets/css/theme.css) and uncomment the lines of the variables you want to change, and you're good to go. Please note that background and color variables have different values for light and dark color schemes.
+Just copy our [`theme.css`](https://github.com/arthrfrts/minduim/blob/main/assets/css/theme.css) and uncomment the lines of the variables you want to change, and you're good to go.
 
 `theme.css` is also a good place to add custom style rules as well, since it's the last stylesheet called by your theme. It will overwrite any rules set by default.
 
