@@ -1,4 +1,39 @@
 /*
+  Default variable values
+*/
+:root {
+  /* Typography */
+  --font-family-base:
+    Inter, Roboto, "Helvetica Neue", "Arial Nova", "Nimbus Sans", Arial,
+    sans-serif;
+  --font-family-headings: var(--font-family-base);
+  --font-family-quote:
+    Charter, "Bitstream Charter", "Sitka Text", Cambria, serif;
+  --font-family-code:
+    ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "DejaVu Sans Mono", monospace;
+  --font-size-base: 16px;
+  --font-size-small: 0.875em;
+  /* Colors */
+  --color-background: var(--white);
+  --color-foreground: var(--black);
+  --color-accent: var(--yellow);
+  --color-accent-alt: var(--red);
+  --color-details: var(--gray);
+  /* Details */
+  --radius: 0.5rem;
+  --border: 1px dotted var(--color-details);
+  --shadow: 0 0 7px var(--color-details);
+  --transition-duration: 0.36s;
+  /* Color palette */
+  --white: rgb(255, 255, 255);
+  --black: rgb(44, 44, 44);
+  --gray: rgb(133, 146, 158);
+  --red: rgb(231, 76, 60);
+  --yellow: rgb(241, 196, 15);
+}
+
+/*
   Resets
 */
 
@@ -43,6 +78,7 @@ textarea {
   font: inherit;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 /*
@@ -261,6 +297,10 @@ pre {
   overflow: auto;
 }
 
+pre code {
+  font-size: 100%;
+}
+
 .highlight .gutter {
   width: 3ch;
 }
@@ -272,4 +312,68 @@ hr {
   margin-block: 1.5rem;
   height: 0;
   border-bottom: var(--border);
+}
+
+/*
+  Media
+*/
+/* Media */
+img {
+  max-width: 100%;
+  overflow: hidden;
+  opacity: 1;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  img {
+    opacity: 0.75;
+    transition: opacity var(--transition-duration) ease;
+  }
+
+  img:hover,
+  img:focus {
+    opacity: 1;
+  }
+}
+
+.post-content img {
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow);
+}
+
+@media screen and (width > 690px) {
+  .post-content img {
+    width: calc(100% - (0.5rem + 10rem));
+  }
+}
+
+img + em,
+img + br + em {
+  display: block;
+  width: 10rem;
+  color: var(--color-details);
+  font-style: normal;
+  font-size: var(--font-size-small);
+  padding: 0.25rem 0.5rem;
+}
+
+@media screen and (width > 690px) {
+  img + em,
+  img + br + em {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+video,
+iframe[src*="youtu"],
+iframe[src*="twitch"],
+iframe[src*="vimeo"] {
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  aspect-ratio: 16 / 9;
+  height: auto;
+  width: 100%;
 }
