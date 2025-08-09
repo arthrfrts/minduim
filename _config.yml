@@ -31,8 +31,8 @@ minduim:
     archive_category_title: "Posts filed under “%s”" # don't forget `%s`, it will be replaced by the category name.
     post_tagged_with: "Tagged with:"
     blog_pagination_title: "Blog Pagination"
-    blog_pagination_next_page: "Older posts"
-    blog_pagination_prev_page: "Newer posts"
+    blog_pagination_next_page: "Older posts &rarr;"
+    blog_pagination_prev_page: "&larr; Newer posts"
 
 # Menus
 main_menu:
@@ -40,40 +40,31 @@ main_menu:
   items:
     - label: About
       url: /about/
-    - label: Contact
-      url: /contact/
+    - label: Bugs?
+      url: https://github.com/arthrfrts/minduim/issues
+      external: true
 
 footer_menu:
   title: Social
   items:
     - label: Feed
-      url: /feed/
-    - label: Bluesky
-      url: https://bsky.app/
-      external: true
+      url: /feed.xml
+    - label: JSON Feed
+      url: /feed.json
     - label: GitHub
-      url: https://github.com/
+      url: https://github.com/arthrfrts/minduim
       external: true
-
-# Plugin settings
-plugins:
-  - jekyll-feed
-  - jekyll-json-feed
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-archives
 
 # Plugin: jekyll-paginate
-paginate: 12
+paginate: 6
 paginate_path: "/page/:num/"
 
 # Plugin: jekyll-archives
 jekyll-archives:
   enabled:
-  - year
-  - month
-  - tags
+    - year
+    - month
+    - tags
   layout: archive
   permalinks:
     year: "/:year/"
