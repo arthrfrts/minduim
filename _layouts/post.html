@@ -43,14 +43,26 @@ layout: default
   {% if page.previous or page.next -%}
     <nav class="blog-pagination" aria-label="{{ site.minduim.translations.blog_pagination_title }}">
       {% if page.next -%}
+        {% assign link_title = page.next.title %}
+
+        {% if page.next.title == "" %}
+          {% assign link_title = page.next.content | markdownify | strip_html | strip_newlines | truncatewords: 10 %}
+        {% endif %}
+
         <a class="prev-page menu-item" href="{{ page.next.url | relative_url }}" rel="next">
-          &larr; {{ page.next.title }}
+          &larr; {{ link_title }}
         </a>
       {%- endif %}
 
       {% if page.previous -%}
+        {% assign link_title = page.previous.title %}
+
+        {% if page.previous.title == "" %}
+          {% assign link_title = page.previous.content | markdownify | strip_html | strip_newlines | truncatewords: 10 %}
+        {% endif %}
+
         <a class="next-page menu-item" href="{{ page.previous.url | relative_url }}" rel="prev">
-          {{ page.previous.title }} &rarr;
+          {{ link_title }} &rarr;
         </a>
       {%- endif %}
     </nav>
