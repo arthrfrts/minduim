@@ -358,13 +358,15 @@ img {
   }
 }
 
-.post-content img {
+.post-content img,
+.page-content img {
   border-radius: 0.5rem;
   box-shadow: var(--shadow);
 }
 
 @media screen and (width > 690px) {
-  .post-content img {
+  .post-content img,
+  .page-content img {
     width: calc(100% - (0.5rem + 10rem));
   }
 }
