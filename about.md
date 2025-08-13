@@ -97,6 +97,9 @@ minduim:
     blog_pagination_next_page: "Older posts"
     blog_pagination_prev_page: "Newer posts"
   
+favicon:
+  url: /assets/images/favicon.png
+  type: image/png # Optional
 # Menus
 main_menu:
   title: Navigate
@@ -237,6 +240,23 @@ Minduim tries to bring up post author information from the following sources:
   ```
 
 If none of these sources are available, Minduim will just show the value of your `post.author` as it is.
+
+### Favicons
+
+You can customize your website favicon by adding a favicon image and adding the following to your `_config.yml`:
+
+
+```yml
+favicon: /path/to/image.format
+
+# OR
+
+favicon:
+  url: /path/to/image.format
+  type: format/mime_type
+```
+
+The `site.favicon.type` parameter is optional.
 
 ## Contributing
 
