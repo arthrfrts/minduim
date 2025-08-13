@@ -3,7 +3,7 @@ description: >-
   This is a theme for a Jekyll blog.
 
 logo: https://picsum.photos/300/300
-lang: pt-BR
+lang: en
 timezone: America/Sao_Paulo
 
 permalink: /:year/:month/:title.html
@@ -33,6 +33,10 @@ minduim:
     blog_pagination_title: "Blog Pagination"
     blog_pagination_next_page: "Older posts &rarr;"
     blog_pagination_prev_page: "&larr; Newer posts"
+
+favicon:
+  url: /assets/images/favicon.png
+  type: image/png
 
 # Menus
 main_menu:

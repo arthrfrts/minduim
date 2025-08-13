@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="{% link assets/css/layout.css %}" />
     <link rel="stylesheet" href="{% link assets/css/theme.css %}" />
     <link rel="stylesheet" href="{% link assets/css/syntax.css %}" />
+    {% if site.favicon -%}
+      <link rel=" icon" {% if site.favicon.type -%} type="{{ site.favicon.type }}" {%- endif %} href="{{ site.favicon.url | default: site.favicon }}" />
+    {%- endif %}
   </head>
   <body>
     {% include header.html %}
