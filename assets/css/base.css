@@ -193,7 +193,7 @@ a {
   text-decoration-style: wavy;
   transition-property: color, text-decoration-color;
   transition-duration: var(--transition-duration);
-  text-decoration-thickness: from-font;
+  text-decoration-thickness: 1px;
 }
 
 a:hover,
